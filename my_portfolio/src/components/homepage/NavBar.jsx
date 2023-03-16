@@ -1,86 +1,39 @@
-import React from "react";
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
-import Offcanvas from 'react-bootstrap/Offcanvas'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import SearchBar from "./SearchBar";
-import { NavLink } from 'react-router-dom';
+import React from "react"
 
-
-const NavBar = () => {
-  return (
-  <>
-  {[false].map((expand) => (
-    <Navbar key={expand} bg="dark" expand={expand} className="navBar">
-      <Container className="navContainer" fluid>
-        <Navbar.Brand>
-          <NavLink to='/' className="NavBrand">
-            <img className="logoQAC" alt="QA Cinemas Logo" src={QACLogo} width="100px"/>
-          </NavLink>
-        </Navbar.Brand>
-        <SearchBar/>
-        <Navbar.Toggle className="navMenuButton" aria-controls={`offcanvasNavbar-expand-${expand}`} />
-        <Navbar.Offcanvas id={`offcanvasNavbar-expand-${expand}`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-          placement="end"
-        >
-          <Offcanvas.Header closeButton className="navBarMenu">
-            <Offcanvas.Title  id={`offcanvasNavbarLabel-expand-${expand}`}>
-              Menu
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body className="navBarBody">
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-              <NavLink to="/" title="Home Page">Homepage</NavLink>
-              <NavLink to="/listingsgallery" title="Listings Gallery">Listing Gallery</NavLink>
-              <NavLink to="newreleases" title="New Releases">New Releases</NavLink>
-              <NavLink to="ticketbooking" title="Ticket Bookings">Book your tickets here</NavLink>
-              <NavLink to="payment" title="Payment">Payment</NavLink>
-              <NavDropdown className="navDrop"
-                title="More Info"
-                id={`offcanvasNavbarDropdown-expand-${expand}`}>
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="about" title="About Us">About SBD</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="classifications" title="Classifications">Classifications</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="openingtimes" title="Opening Times">Opening Times</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="gettingthere" title="Getting There">Getting There</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="placestogo" title="Places To Go">Places To Go</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="discussionboard" title="Discussion Board">Discussion Board</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="screens" title="Screens">Screens</NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="navDrop">
-                  <NavLink to="contactus" title="Contact Us">Contact Us</NavLink>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
-  ))}
-</>
-  
-  )
+function NavBar() {
+  <div className="NavBar">
+  <nav class="navbar fixed-top navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown link
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
 }
-  
-  export default NavBar;
+
+export default NavBar;

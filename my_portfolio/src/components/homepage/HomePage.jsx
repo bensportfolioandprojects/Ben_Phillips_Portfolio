@@ -1,22 +1,24 @@
 //import NavBar from './NavBar';
-import Header from './Header';
-import AboutMe from './AboutMe';
-import Education from './Education';
-import Career from './Career'
+import Header from "./Header";
+import AboutMe from "./AboutMe";
+import PastWork from './PastWork';
+import Skills from './Skills'
+import ContactDetails from "./ContactDetails";
+import NavBar from "./NavBar";
 
 
 const HomePage = () => {
     return (
         <>
+        <NavBar />
         <Header />
-        <img src="CV Photo Cropped.JPEG" alt="CVPhoto" className="CVPhoto"/>
         <AboutMe />
-        <Career />
-        <Education />
+        <Skills />
+        <PastWork />
         <ContactDetails />
         </>
 
     );
 }
 
-export default HomePage
+export default HomePage;
